@@ -1,31 +1,14 @@
-urls = ['https://www.earning-bot.eu.org/2023/10/Earning-Bot-in-aviso-with-termux.html',
-       'https://www.earning-bot.eu.org/2024/03/earning-bot-in-profitcentr-with-termux.html']
+def other_slepe(number:int):
+    li_clok = ['🕛','🕒','🕜','🕣',]
+    clo = 0 
+    for sk in range(number-1,-1,-1):
+        if event.is_set():
+            break
+        else:
+            print('\t',li_clok[clo],time.strftime("%H:%M:%S", time.gmtime(sk)), end = '\r')
+            clo = clo+1 
+            if clo == len(li_clok):
+                clo=0
+            time.sleep(1)
 
-Referrering_URLs = ['https://www.google.com/search?q=aviso+bot',
-        'https://www.google.com/search?q=profitcentr+bot','www.pinterest.com',
-        'https://m.facebook.com','https://lm.facebook.com','https://t.me/Earning_with_Bots',
-        'https://www.bing.com/search?q=aviso+bot','https://www.bing.com/search?q=profitcentr+bot'
-        ]
-
-
-Refer = random.choice(Referrering_URLs)
-
-if 'aviso' in Refer:
-    driver.execute_script(f"window.open('{Refer}');")
-    driver.switch_to.window(driver.window_handles[1])
-    time.sleep(10)
-    driver.execute_script(f'window.location.href = "https://www.earning-bot.eu.org/2023/10/Earning-Bot-in-aviso-with-termux.html";')
-
-elif 'profitcentr' in Refer:
-    driver.execute_script(f"window.open('{Refer}');")
-    driver.switch_to.window(driver.window_handles[1])
-    time.sleep(10)
-    driver.execute_script(f'window.location.href = "https://www.earning-bot.eu.org/2023/10/Earning-Bot-in-aviso-with-termux.html";')
-
-else:
-    driver.execute_script(f"window.open('{Refer}');")
-    driver.switch_to.window(driver.window_handles[1])
-    time.sleep(10)
-    url = random.choice(urls)
-
-    driver.execute_script(f'window.location.href = "{url}";')
+other_slepe(600)
