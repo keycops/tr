@@ -41,7 +41,7 @@ else:
     url = random.choice(urls)
     driver.execute_script(f'window.location.href = "{url}";')
 
-sleeper(600)
+sleeper(900)
 
 close_tap(driver)
 
