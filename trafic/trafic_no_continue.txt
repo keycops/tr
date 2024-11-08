@@ -3,12 +3,14 @@ urls = ['https://www.earning-bot.eu.org/2023/10/Earning-Bot-in-aviso-with-termux
 Referrering_URLs = ['https://www.google.com/search?q=aviso+bot',
         'https://www.google.com/search?q=profitcentr+bot','www.pinterest.com',
         'https://m.facebook.com','https://lm.facebook.com','https://t.me/Earning_with_Bots',
-        'https://www.bing.com/search?q=aviso+bot','https://www.bing.com/search?q=profitcentr+bot'
+        'https://www.bing.com/search?q=aviso+bot','https://www.bing.com/search?q=profitcentr+bot','buzz-teck.blogspot.com',
         ]
 
 
 Refer = random.choice(Referrering_URLs)
 
+driver.execute_script(f"window.open('chrome://new-tab-page/');")
+driver.switch_to.window(driver.window_handles[1])
 if 'aviso' in Refer:
     driver.get(Refer)
     time.sleep(10)
@@ -24,5 +26,9 @@ else:
     time.sleep(10)
     url = random.choice(urls)
     driver.execute_script(f'window.location.href = "{url}";')
+
+sleeper(600)
+
+close_tap(driver)
 
 
